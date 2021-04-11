@@ -24,14 +24,10 @@ class Heap {
   bubbleDown() {
     let idx = 0;
     let array = this.array;
-    while (this.isValidParent(array, idx)) {
-      if (array[idx] < this.rightChild(idx)) {
-        this.swap(idx, this.rightChildIdx(idx));
-        idx = this.rightChildIdx(idx);
-      } else {
-        this.swap(idx, this.leftChildIdx(idx));
-        idx = this.leftChildIdx(idx);
-      }
+    while (idx <= array.length && !this.isValidParent(array, idx)) {
+      let largerChildIdx = this.largerChildIdx(idx);
+      this.swap(idx, largerChildIdx);
+      idx = largerChildIdx;
     }
   }
 
@@ -68,6 +64,11 @@ class Heap {
     return (
       array[idx] >= this.leftChild(idx) && array[idx] >= this.rightChild(idx)
     );
+  }
+  private largerChildIdx(idx) {
+    return this.leftChild(idx) > this.rightChild(idx)
+      ? this.leftChildIdx(idx)
+      : this.rightChildIdx(idx);
   }
 }
 
