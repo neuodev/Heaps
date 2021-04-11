@@ -80,7 +80,7 @@ class Heap {
   }
   private largerChildIdx(idx) {
     if (!this.hasLeftChild(idx)) return idx;
-    if (!this.hasRightChild(idx)) return this.leftChild(idx);
+    if (!this.hasRightChild(idx)) return this.leftChildIdx(idx);
     return this.leftChild(idx) > this.rightChild(idx)
       ? this.leftChildIdx(idx)
       : this.rightChildIdx(idx);
@@ -96,5 +96,5 @@ heap.insert(30);
 heap.insert(50);
 heap.insert(60);
 heap.insert(70);
-heap.remove();
+// heap.remove()
 console.log(heap.array);
