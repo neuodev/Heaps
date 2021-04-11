@@ -69,9 +69,14 @@ class Heap {
   }
 
   isValidParent(array, idx) {
-    return (
-      array[idx] >= this.leftChild(idx) && array[idx] >= this.rightChild(idx)
-    );
+    if (!this.hasLeftChild(idx)) {
+      return true;
+    }
+    let isValid = array[idx] >= this.leftChild(idx);
+    if (this.hasRightChild(idx)) {
+      return (isValid = isValid && array[idx] >= this.rightChild(idx));
+    }
+    return isValid;
   }
   private largerChildIdx(idx) {
     if (!this.hasLeftChild(idx)) return idx;
