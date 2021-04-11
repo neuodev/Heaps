@@ -1,0 +1,3 @@
+function heapify(array: number[]) {
+    
+}
