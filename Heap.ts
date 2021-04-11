@@ -16,10 +16,12 @@ class Heap {
   }
 
   remove() {
+    if (this.array.length === 0) return null;
     this.swap(0, this.size - 1);
-    this.array.pop();
+    let item = this.array.pop();
     this.bubbleDown();
     console.log(this.array);
+    return item;
   }
   bubbleDown() {
     let idx = 0;
