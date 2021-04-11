@@ -16,7 +16,7 @@ class Heap {
   }
 
   remove() {
-    if (this.array.length === 0) return null;
+    if (this.isEmpty()) return null;
     this.swap(0, this.size - 1);
     let item = this.array.pop();
     this.bubbleDown();
@@ -60,6 +60,12 @@ class Heap {
   }
   rightChild(idx) {
     return this.array[this.rightChildIdx(idx)];
+  }
+  hasLeftChild(idx) {
+    return this.leftChildIdx(idx) <= this.array.length;
+  }
+  hasRightChild(idx) {
+    return this.rightChildIdx(idx) <= this.array.length;
   }
 
   isValidParent(array, idx) {
