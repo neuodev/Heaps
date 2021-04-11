@@ -72,6 +72,9 @@ class Heap {
       ? this.leftChildIdx(idx)
       : this.rightChildIdx(idx);
   }
+  public isEmpty() {
+    return this.array.length === 0;
+  }
 }
 
 const heap = new Heap();
