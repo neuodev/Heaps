@@ -74,6 +74,8 @@ class Heap {
     );
   }
   private largerChildIdx(idx) {
+    if (!this.hasLeftChild(idx)) return idx;
+    if (!this.hasRightChild(idx)) return this.leftChild(idx);
     return this.leftChild(idx) > this.rightChild(idx)
       ? this.leftChildIdx(idx)
       : this.rightChildIdx(idx);
