@@ -1,4 +1,4 @@
-##### Heaps
+##### HEAPS
 ###Build a binary heap from scratch that includes insert(), remove() methods. Also, apply Heapify and getKthLargest 
 
 
