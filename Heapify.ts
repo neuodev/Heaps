@@ -1,7 +1,9 @@
 console.log(heapify([5, 3, 8, 4, 1, 2]));
 
+// last parent =  (n/2) -1
 function heapify(array: number[]) {
-  for (let i = 0; i < array.length; i++) {
+  const lastParentIdx = array.length / 2 - 1;
+  for (let i = lastParentIdx; i >= 0; i--) {
     bubbleDown(array, i);
   }
   return array;

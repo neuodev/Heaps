@@ -98,3 +98,5 @@ heap.insert(60);
 heap.insert(70);
 // heap.remove()
 console.log(heap.array);
+
+export default Heap;
